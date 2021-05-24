@@ -7,21 +7,17 @@ const refs = {
 
 refs.number.addEventListener("input", onInputChange);
 
+refs.render.addEventListener("click", createBoxes);
+
+refs.destroy.addEventListener("click", destroyBoxes);
+
 let amount = 0;
-
-refs.render.addEventListener("click", () => {
-  createBoxes(amount);
-});
-
-refs.destroy.addEventListener("click", () => {
-  destroyBoxes();
-});
 
 function onInputChange(e) {
   amount = e.currentTarget.value;
 }
 
-function createBoxes(amount) {
+function createBoxes() {
   for (let i = 0; i < amount; i += 1) {
     refs.container.style.padding = "25px";
     refs.container.style.display = "flex";
