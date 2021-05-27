@@ -7,13 +7,16 @@ const ingredients = [
   "Приправы",
 ];
 
-const ulCreator = (items) => {
-  items.forEach((item) => {
+const ingredientsEl = document.querySelector("#ingredients");
+
+const makeIngedientsList = (items) => {
+  return items.map((item) => {
     const ingredient = document.createElement("li");
     ingredient.textContent = item;
-    const ingredientsEl = document.querySelector("#ingredients");
-    ingredientsEl.appendChild(ingredient);
+
+    return ingredient;
   });
 };
 
-ulCreator(ingredients);
+const elements = makeIngedientsList(ingredients);
+ingredientsEl.append(...elements);
