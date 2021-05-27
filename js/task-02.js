@@ -9,14 +9,16 @@ const ingredients = [
 
 const ingredientsEl = document.querySelector("#ingredients");
 
-const makeIngedientsList = (items) => {
-  return items.map((item) => {
+makeIngrList(ingredients);
+
+function makeIngrList(items) {
+  const arr = [];
+
+  items.forEach((item) => {
     const ingredient = document.createElement("li");
     ingredient.textContent = item;
-
-    return ingredient;
+    arr.push(ingredient);
   });
-};
 
-const elements = makeIngedientsList(ingredients);
-ingredientsEl.append(...elements);
+  ingredientsEl.append(...arr);
+}
