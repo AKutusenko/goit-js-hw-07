@@ -6,6 +6,10 @@
 const inputEl = document.querySelector("#name-input");
 const spanEl = document.querySelector("#name-output");
 
-inputEl.addEventListener("input", () => {
-  spanEl.textContent = inputEl.value;
+inputEl.addEventListener("input", (e) => {
+  if (e.currentTarget.value.trim().length === 0) {
+    spanEl.textContent = "незнакомец";
+  } else {
+    spanEl.textContent = e.currentTarget.value;
+  }
 });
